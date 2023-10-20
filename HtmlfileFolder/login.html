@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #3498db; /* Blue background color */
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      width: 300px;
+      background-color: #ffd700; /* Yellow background color for login container */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    }
+
+    .login-container h2 {
+      margin-top: 0;
+    }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box; /* Include padding and border in width */
+    }
+
+    #error-message {
+      color: red;
+    }
+
+    .login-button {
+      background-color: red; /* Red color for the login button */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-button:hover {
+      background-color: darkred; /* Darker red color on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <div id="error-message"></div>
+    <form id="login-form">
+      <input type="text" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <button type="button" class="login-button" onclick="validateLogin()">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function validateLogin() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (email.trim() === "" || password.trim() === "") {
+        document.getElementById("error-message").textContent = "Both email and password are required.";
+      } else {
+        // You can add your authentication logic here
+        if (email === "user@example.com" && password === "password123") {
+          // Redirect to the home page
+          window.location.href = "home.html";
+        } else {
+          document.getElementById("error-message").textContent = "Invalid credentials. Please try again.";
+        }
+      }
+    }
+  </script>
+</body>
+</html>

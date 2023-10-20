@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 20px;
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Grid</h1>
+  <div class="image-grid" id="image-grid"></div>
+
+  <script>
+    const imageGrid = document.getElementById("image-grid");
+
+    const imageUrls = [
+    'https://picsum.photos/200/300?image=2',
+    'https://picsum.photos/200/300?image=3',
+    'https://picsum.photos/200/300?image=4',
+    'https://picsum.photos/200/300?image=5',
+    'https://picsum.photos/200/300?image=6',
+    'https://picsum.photos/200/300?image=7',
+    'https://picsum.photos/200/300?image=8',
+    'https://picsum.photos/200/300?image=9',
+    'https://picsum.photos/200/300?image=10',
+    'https://picsum.photos/200/300?image=11',
+    'https://picsum.photos/200/300?image=12',
+    'https://picsum.photos/200/300?image=13',
+    'https://picsum.photos/200/300?image=14',
+    'https://picsum.photos/200/300?image=15',
+    'https://picsum.photos/200/300?image=16',
+    'https://picsum.photos/200/300?image=17',
+    'https://picsum.photos/200/300?image=18',
+    'https://picsum.photos/200/300?image=19',
+    'https://picsum.photos/200/300?image=20',
+    'https://picsum.photos/200/300?image=21',
+    'https://picsum.photos/200/300?image=22',
+    'https://picsum.photos/200/300?image=23',
+    'https://picsum.photos/200/300?image=24',
+    'https://picsum.photos/200/300?image=25',
+    'https://picsum.photos/200/300?image=26',
+    'https://picsum.photos/200/300?image=27',
+    'https://picsum.photos/200/300?image=28',
+    'https://picsum.photos/200/300?image=29',
+    'https://picsum.photos/200/300?image=30',
+    'https://picsum.photos/200/300?image=31',
+    'https://picsum.photos/200/300?image=32',
+    'https://picsum.photos/200/300?image=33',
+    'https://picsum.photos/200/300?image=34',
+    'https://picsum.photos/200/300?image=35',
+    'https://picsum.photos/200/300?image=36',
+    'https://picsum.photos/200/300?image=37',
+    'https://picsum.photos/200/300?image=38',
+    'https://picsum.photos/200/300?image=39',
+    'https://picsum.photos/200/300?image=40',
+    'https://picsum.photos/200/300?image=41',
+    'https://picsum.photos/200/300?image=42',
+    'https://picsum.photos/200/300?image=43',
+    'https://picsum.photos/200/300?image=44',
+    'https://picsum.photos/200/300?image=45',
+    'https://picsum.photos/200/300?image=46',
+    'https://picsum.photos/200/300?image=47',
+    'https://picsum.photos/200/300?image=48',
+    'https://picsum.photos/200/300?image=49',
+      // Add more image URLs here
+    ];
+
+    function preloadImages(imageUrls) {
+      const images = [];
+      for (const imageUrl of imageUrls) {
+        const image = new Image();
+        image.src = imageUrl;
+        images.push(image);
+      }
+      return images;
+    }
+
+    function displayImages(images) {
+      images.forEach((image) => {
+        image.classList.add("image");
+        imageGrid.appendChild(image);
+      });
+    }
+    const preloadedImages = preloadImages(imageUrls);
+    displayImages(preloadedImages);
+  </script>
+</body>
+</html>
