@@ -69,8 +69,8 @@ class HomePage extends StatelessWidget {
           return CachedNetworkImage(
             imageUrl: imageUrls[index],
             fit: BoxFit.cover,
-            placeholder: (context, url) => Center(child: CircularProgressIndicator()), // Placeholder while loading
-            errorWidget: (context, url, error) => Icon(Icons.error), // Error widget on load failure
+            placeholder: (context, url) => Center(child: CircularProgressIndicator()), 
+            errorWidget: (context, url, error) => Icon(Icons.error), 
           );
         },
       ),
