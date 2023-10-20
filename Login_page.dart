@@ -6,8 +6,6 @@ class LoginPage extends StatelessWidget {
   final TextEditingController passwordController = TextEditingController();
 
   void navigateToHomePage(BuildContext context) {
-    // Implement the logic for checking user credentials here.
-    // For demonstration purposes, we're using a hardcoded check here.
     if (emailController.text == 'your@email.com' && passwordController.text == 'yourpassword') {
       Navigator.push(
         context,
@@ -16,7 +14,6 @@ class LoginPage extends StatelessWidget {
         ),
       );
     } else {
-      // Display an error message for invalid credentials.
       showDialog(
         context: context,
         builder: (context) {
@@ -61,7 +58,6 @@ class LoginPage extends StatelessWidget {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Call the function to navigate to the Home Page on successful login.
                   navigateToHomePage(context);
                 },
                 child: Text('Login'),
